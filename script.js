@@ -8,7 +8,7 @@ function search(str) {
 	// TODO
 	if(!str || str.length === 0) return;
 	fruit.filter((name) => {	
-		if(name.substring(0, str.length).toLowerCase() === str)
+		if(name.substring(0, str.length).toLowerCase() === str.toLowerCase())
 			results.push(name);
 	});
 	return results;
@@ -16,7 +16,7 @@ function search(str) {
 
 function searchHandler(e) {
 	// TODO
-	let inputVal = e.target.value.toLowerCase();
+	let inputVal = e.target.value;
 	let results = search(inputVal);
 	clearList();
 	if(results) showSuggestions(results, inputVal);
